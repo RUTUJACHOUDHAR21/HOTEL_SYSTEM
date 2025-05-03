@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hotel Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🏨 Hotel Booking System</h1>
+    <nav>
+      <a href="#rooms">Rooms</a>
+      <a href="#booking">Book</a>
+      <a href="#availability">Check Availability</a>
+      <a href="#contact">Contact</a>
+      <a href="#admin">Admin</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Rooms Section -->
+    <section id="rooms">
+      <h2>Available Rooms</h2>
+      <div class="room" onclick="bookRoom(101)">Room 101 - Deluxe - ₹1500</div>
+      <div class="room" onclick="bookRoom(102)">Room 102 - Standard - ₹1000</div>
+      <div class="room" onclick="bookRoom(103)">Room 103 - Suite - ₹2000</div>
+    </section>
+
+    <!-- Booking Form -->
+    <section id="booking">
+      <h2>Book a Room</h2>
+      <form onsubmit="submitBooking(event)">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" required>
+        <label for="room">Room Number:</label>
+        <input type="number" id="room" required>
+        <label for="days">Number of Days:</label>
+        <input type="number" id="days" required>
+        <button type="submit">Book Now</button>
+      </form>
+      <div id="booking-output"></div>
+    </section>
+
+    <!-- Availability Checker -->
+    <section id="availability">
+      <h2>Check Availability</h2>
+      <input type="number" id="check-room" placeholder="Enter Room Number">
+      <button onclick="checkAvailability()">Check</button>
+      <div id="availability-output"></div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <!-- Admin Dashboard (Static) -->
+    <section id="admin">
+      <h2>Admin Dashboard</h2>
+      <ul>
+        <li>Total Rooms: 3</li>
+        <li>Rooms Booked Today: 1</li>
+        <li>Pending Requests: 0</li>
+        <li><button onclick="alert('Admin portal coming soon!')">Go to Admin Panel</button></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Hotel Management System</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
